@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="rescue_randy_customize">
+    <static>true</static>
+    <link name="link">
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>./meshes/rescue_randy.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <plugin
+            filename="ignition-gazebo-thermal-system"
+            name="ignition::gazebo::systems::Thermal">
+            <temperature>311.0</temperature>
+          </plugin>
+        <geometry>
+          <mesh>
+            <uri>./meshes/rescue_randy.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <specular>1.0 1.0 1.0</specular>
+          <pbr>
+            <metal>
+              <albedo_map>./materials/textures/rescue_randy_albedo.png</albedo_map>
+              <normal_map>./materials/textures/rescue_randy_normal.png</normal_map>
+              <metalness_map>./materials/textures/rescue_randy_metalness.png</metalness_map>
+              <roughness_map>./materials/textures/rescue_randy_roughness.png</roughness_map>
+            </metal>
+          </pbr>
+          <!-- fallback to classic if no PBR support-->
+          <script>
+            <uri>./materials/scripts</uri>
+            <uri>./materials/textures</uri>
+            <name>RescueRandy/Diffuse</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
