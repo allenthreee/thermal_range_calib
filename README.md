@@ -57,9 +57,9 @@ source ~/catkin_ws/devel/setup.bash
 ## 3. Run our example
 The exmaple dataset can be download from [**Google Drive**](https://drive.google.com/drive/folders/1S8CchMg3BzNgnnZs7KR-XiLEV5juh_SD)
 
-Move it to your local path, and then change the file path in **calib.yaml** to your data path. Then directly run
+Move it to your local path, and then change the file path in **thermal_calib.yaml** to your data path. Then directly run
 ```
-roslaunch thermal_range_calib calib.launch
+roslaunch thermal_range_calib thermal_calib.launch
 ```
 
 ## 4. Run on your own sensor set
