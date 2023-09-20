@@ -7,8 +7,8 @@ you can get the simulation envrionment shown in the figure by running:
 ```ign gazebo 2023_aug_gazebo_world.sdf ```
 
 ![no_ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic.png)
-再点一下右上角三个引号, 搜索lidar-> visualize lidar
-然后再把左下角的暂停点成启动(圆圈里面的三角形)就可一看到 lidar ray了
+Click the three quotation marks in the upper right corner again, search for lidar-> visualize lidar.
+Then click pause in the lower left corner to start (the triangle inside the circle) and you can see the lidar ray.
 ![ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic2.png)
 
 ## experiment
@@ -60,7 +60,7 @@ roslaunch thermal_range_calib calib.launch
 
 ## 4. Run on your own sensor set
 ### 4.1 Record data
-Record thermal image files to png format and the point cloud to pcd files.
+Record thermal image files to png format and the point cloud to pcd files(you can record it from the simulation or hardware).
 ### 4.2 Modify the **calib.yaml**
 Change the data path to your local data path.  
 Provide the instrinsic matrix and distor coeffs for your thermal camera.
