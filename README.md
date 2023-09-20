@@ -44,7 +44,7 @@ Clone the repository and catkin_make:
 
 ```
 cd ~/catkin_ws/src
-git clone @todo
+git clone https://github.com/allenthreee/thermal_range_calib.git
 cd ../
 catkin_make
 source ~/catkin_ws/devel/setup.bash
