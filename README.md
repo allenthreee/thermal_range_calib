@@ -11,6 +11,8 @@ Click the three quotation marks in the upper right corner again, search for lida
 Then click pause in the lower left corner to start (the triangle inside the circle) and you can see the lidar ray.
 ![ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic2.png)
 
+Then you can follow this [tutorial](https://gazebosim.org/docs/citadel/ros_integration) to convert ignition gazebo sensor info to ros_msg.
+
 ## experiment
 # thermal_range_calib
 **thermal_range_calib** is a robust, high accuracy extrinsic calibration tool between thermal camera LiDAR (e.g. Livox) and RGBD-camera in targetless environment. If the scene is suitable, we can achieve high-level accuracy similar to the target based method.
