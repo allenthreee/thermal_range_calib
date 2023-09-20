@@ -13,20 +13,11 @@ you can get the simulation envrionment shown in the figure by running:
 
 ## experiment
 # thermal_range_calib
-**thermal_range_calib** is a robust, high accuracy extrinsic calibration tool between high resolution LiDAR (e.g. Livox) and camera in targetless environment. Our algorithm can run in both indoor and outdoor scenes, and only requires edge information in the scene. If the scene is suitable, we can achieve pixel-level accuracy similar to or even beyond the target based method.
-<div align="center">
-    <img src="pics/color_cloud.png" width = 100% >
-    <font color=#a0a0a0 size=2>An example of a outdoor calibration scenario. We color the point cloud with the calibrated extrinsic and compare with actual image. A and C are locally enlarged
-views of the point cloud. B and D are parts of the camera image
-corresponding to point cloud in A and C.</font>
-</div>
+**thermal_range_calib** is a robust, high accuracy extrinsic calibration tool between thermal camera LiDAR (e.g. Livox) and RGBD-camera in targetless environment. If the scene is suitable, we can achieve high-level accuracy similar to the target based method.
 
-## Info
-New features:
-1. Support muti-scenes calibration (more accurate and robust)
 
 ## Related paper
-Related paper is coming soon
+Related paper is coming soon...
 
 
 ## 1. Prerequisites
@@ -66,19 +57,12 @@ Move it to your local path, and then change the file path in **calib.yaml** to y
 ```
 roslaunch thermal_range_calib calib.launch
 ```
-You will get the following result. (Sensor suite: Livox Avia + Realsense-D435i)
-<div align="center">
-    <img src="pics/single_calib_case.png" width = 100% >
-    <font color=#a0a0a0 size=2>An example of single scene calibration.</font>
-</div>
 
 ## 4. Run on your own sensor set
 ### 4.1 Record data
-Record the point cloud to pcd files and record image files.
+Record thermal image files to png format and the point cloud to pcd files.
 ### 4.2 Modify the **calib.yaml**
 Change the data path to your local data path.  
-Provide the instrinsic matrix and distor coeffs for your camera.
+Provide the instrinsic matrix and distor coeffs for your thermal camera.
 
-### 4.3 Use multi scenes calibration
-Change the params in **multi_calib.yaml**, name the image file and pcd file from 0 to (data_num-1).
 
