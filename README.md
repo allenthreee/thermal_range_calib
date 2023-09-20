@@ -12,7 +12,8 @@ Then click pause in the lower left corner to start (the triangle inside the circ
 ![ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic2.png)
 
 Then you can follow this [tutorial](https://gazebosim.org/docs/citadel/ros_integration) to convert ignition gazebo sensor info to ros_msg.
-here is [my own tutorial](https://zhuanlan.zhihu.com/p/657387526)
+
+Here is [my own tutorial](https://zhuanlan.zhihu.com/p/657387526)
 
 ## experiment
 # thermal_range_calib
