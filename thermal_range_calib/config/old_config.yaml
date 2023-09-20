@@ -1,0 +1,19 @@
+# Data path. adjust them!
+common:
+    image_file: "/home/allen/calib_ws/data_demo/single_scene_calibration/3.png"
+    # pcd_file: "/home/allen/calib_ws/data_demo/single_scene_calibration/3.pcd"
+    pcd_file: "/home/allen/calib_ws/data_demo/single_scene_calibration/3edited.pcd"
+    result_file: "/home/allen/calib_ws/data_demo/extrinsic.txt"
+
+# Camera Parameters. Adjust them!
+camera:
+    camera_matrix: [1364.45, 0.0,      958.327,
+                0.0,     1366.46,  535.074,
+                0.0,     0.0,      1.0     ]
+    dist_coeffs: [0.0958277, -0.198233, -0.000147133, -0.000430056, 0.000000]
+
+# Calibration Parameters.!
+calib:
+    # calib_config_file: "/home/allen/calib_ws/src/thermal_range_calib/config/config_outdoor.yaml"
+    calib_config_file: "/home/allen/calib_ws/src/thermal_range_calib/config/config_indoor.yaml"
+    use_rough_calib: false # set true if your initial_extrinsic is bad
