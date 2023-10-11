@@ -1,19 +1,7 @@
 # thermal range extrinsic calibration
 
 ## gazebo simulation
-
-you can get the simulation envrionment shown in the figure by running:
-
-```ign gazebo 2023_aug_gazebo_world.sdf ```
-
-![no_ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic.png)
-Click the three quotation marks in the upper right corner again, search for lidar-> visualize lidar.
-Then click pause in the lower left corner to start (the triangle inside the circle) and you can see the lidar ray.
-![ray](https://github.com/allenthreee/thermal_extrinsic/blob/main/gazebo_simulation/extrinsic2.png)
-
-Then you can follow this [tutorial](https://gazebosim.org/docs/citadel/ros_integration) to convert ignition gazebo sensor info to ros_msg.
-
-Here is [my own tutorial](https://zhuanlan.zhihu.com/p/657387526)
+You can find the simulation environment in this [repo](https://github.com/allenthreee/thermal_range_calib_simulation) 
 
 ## experiment
 # thermal_range_calib
