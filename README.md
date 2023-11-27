@@ -43,9 +43,8 @@ source ~/catkin_ws/devel/setup.bash
 ```
 
 ## 3. Run our example
-The exmaple dataset can be download from [**Google Drive**](https://drive.google.com/drive/folders/1S8CchMg3BzNgnnZs7KR-XiLEV5juh_SD)
 
-example 2: [google drive](https://drive.google.com/drive/folders/1qVTr8TDtHo3dQR90_XpZD-76ECm691wW?usp=sharing)
+example data could be download here: [google drive](https://drive.google.com/drive/folders/1qVTr8TDtHo3dQR90_XpZD-76ECm691wW?usp=sharing)
 
 Move it to your local path, and then change the file path in **thermal_calib.yaml** to your data path. Then directly run
 ```
