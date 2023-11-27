@@ -1,0 +1,15 @@
+<launch>
+  <rosparam command="load" file="$(find thermal_range_calib)/config/cmu_pillar_lidar_left_calib.yaml" />
+  <node 
+    pkg="thermal_range_calib"
+    type="thermal_range_calib_ooad"
+    name="thermal_range_calib_ooad"
+    output="screen"
+  />
+  <node 
+    pkg="rviz"
+    type="rviz"
+    name="rviz"
+    args="-d $(find thermal_range_calib)/rviz_cfg/calib.rviz"
+  />
+</launch>

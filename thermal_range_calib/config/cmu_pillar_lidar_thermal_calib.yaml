@@ -1,0 +1,22 @@
+# Data path. adjust them!
+common:
+    image_file: "/home/allen/ooad_calib_ws/real_and_ign_data/cmu_pillar_thermal.png"
+    pcd_file: "/home/allen/ooad_calib_ws/real_and_ign_data/cmu_pillar_lidar.pcd"
+    result_file: "/home/allen/ooad_calib_ws/real_and_ign_data/cmu_pillar/lidar_thermal/cmu_pillar_lidar_thermal1_canny_20.txt"
+
+# Camera Parameters. Adjust them!
+camera:
+    camera_matrix: [710.2768087, 0.0,      329.7667,
+                0.0,     713.4433,  259.8815,
+                0.0,     0.0,      1.0     ]
+    # camera_matrix: [4700.987563588087141e+03, 0.0,      2.115184289108875873e+03,
+    #             0.0,     4.718613209287033897e+03,  1.535121575201496853e+03,
+    #             0.0,     0.0,      1.0     ]                
+    dist_coeffs: [-0.2841, 0.0466, 0.000, 0.000, 0.000]
+    # dist_coeffs: [-6.3682223e-02, 2.83812328e-01, 2.054823e-03, 3.36049e-03, -1.5568534e-01]
+
+# Calibration Parameters.!
+calib:
+    calib_config_file: "/home/allen/ooad_calib_ws/src/thermal_range_calib/config/cmu_pillar_lidar_thermal_config.yaml"
+    # calib_config_file: "/home/allen/calib_ws/src/thermal_range_calib/config/ftm_left_config.yaml"
+    use_rough_calib: false # set true if your initial_extrinsic is bad

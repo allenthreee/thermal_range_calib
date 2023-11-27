@@ -1,0 +1,25 @@
+# Data path. adjust them!
+common:
+    image_file: "/home/allen/calib_ws/data_demo/0thermal.png"
+    # pcd_file: "/home/allen/calib_ws/data_demo/0lidar.pcd"
+    # pcd_file: "/home/allen/calib_ws/data_demo/0edited.pcd"
+    # pcd_file: "/home/allen/calib_ws/data_demo/ftm_lio_pillar_only_2nd.pcd"
+    pcd_file: "/home/allen/calib_ws/data_demo/ftm_lio_half_pillar_3rd.pcd"
+    result_file: "/home/allen/calib_ws/data_demo/ftm_thermal_extrinsic.txt"
+
+# Camera Parameters. Adjust them!
+camera:
+    camera_matrix: [710.987563588087, 0.0,      329.18428910887587,
+                0.0,     713.613209287033897,  259.12157520149685,
+                0.0,     0.0,      1.0     ]
+    # camera_matrix: [4700.987563588087141e+03, 0.0,      2.115184289108875873e+03,
+    #             0.0,     4.718613209287033897e+03,  1.535121575201496853e+03,
+    #             0.0,     0.0,      1.0     ]                
+    dist_coeffs: [-0.0636822, 0.28381232, 0.0020548, 0.00336049, -0.155685]
+    # dist_coeffs: [-6.3682223e-02, 2.83812328e-01, 2.054823e-03, 3.36049e-03, -1.5568534e-01]
+
+# Calibration Parameters.!
+calib:
+    calib_config_file: "/home/allen/calib_ws/src/thermal_range_calib/config/thermal_config.yaml"
+    # calib_config_file: "/home/allen/calib_ws/src/thermal_range_calib/config/ftm_left_config.yaml"
+    use_rough_calib: false # set true if your initial_extrinsic is bad
