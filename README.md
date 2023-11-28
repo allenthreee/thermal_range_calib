@@ -44,6 +44,12 @@ source ~/catkin_ws/devel/setup.bash
 
 ## 3. Run our example
 
+our thermal camera intrinsic is shown below:
+
+[thermal_camera_intrinsics_fx_fy.pdf](https://github.com/allenthreee/thermal_range_calib/files/13486987/thermal_camera_intrinsics_fx_fy.pdf)
+
+[thermal_camera_intrinsics_cx_cy.pdf](https://github.com/allenthreee/thermal_range_calib/files/13486988/thermal_camera_intrinsics_cx_cy.pdf)
+
 example data could be download here: [google drive](https://drive.google.com/drive/folders/1qVTr8TDtHo3dQR90_XpZD-76ECm691wW?usp=sharing)
 
 Move it to your local path, and then change the file path in **thermal_calib.yaml** to your data path. Then directly run
