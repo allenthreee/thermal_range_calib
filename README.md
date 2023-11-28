@@ -46,9 +46,11 @@ source ~/catkin_ws/devel/setup.bash
 
 our thermal camera intrinsic is shown below:
 
-[thermal_camera_intrinsics_fx_fy.pdf](https://github.com/allenthreee/thermal_range_calib/files/13486987/thermal_camera_intrinsics_fx_fy.pdf)
 
-[thermal_camera_intrinsics_cx_cy.pdf](https://github.com/allenthreee/thermal_range_calib/files/13486988/thermal_camera_intrinsics_cx_cy.pdf)
+![thermal_camera_intrinsics_fx_fy_00](https://github.com/allenthreee/thermal_range_calib/assets/59171742/44b04117-4de3-4bc2-94b6-a5fdef8bedb6)
+
+
+![thermal_camera_intrinsics_cx_cy_00](https://github.com/allenthreee/thermal_range_calib/assets/59171742/a524c0e2-d9aa-4f69-a9fd-3f9bf6035d79)
 
 example data could be download here: [google drive](https://drive.google.com/drive/folders/1qVTr8TDtHo3dQR90_XpZD-76ECm691wW?usp=sharing)
 
