@@ -59,7 +59,12 @@ Move it to your local path, and then change the file path in **thermal_calib.yam
 roslaunch thermal_range_calib thermal_calib.launch
 ```
 
-![ftm_rgb_tune](https://github.com/allenthreee/thermal_range_calib/assets/59171742/2c1f01f2-e55e-4c4f-9915-0a0f91275d04)
+Following are some fusion examples:
+
+![6951701231997_ pic](https://github.com/allenthreee/thermal_range_calib/assets/59171742/354e0e90-bd94-49ba-aa44-12f50a86da49)
+
+![6961701231999_ pic](https://github.com/allenthreee/thermal_range_calib/assets/59171742/50cf6868-36bf-49b5-8156-fdf3ee010f9a)
+
 
 ## 4. Run on your own sensor set
 ### 4.1 Record data
