@@ -5,8 +5,11 @@ You can find the simulation environment in this [repo](https://github.com/allent
 
 ## experiment
 # thermal_range_calib
-**thermal_range_calib** is a robust, high accuracy extrinsic calibration tool between thermal camera LiDAR (e.g. Livox) and RGBD-camera in targetless environment. If the scene is suitable, we can achieve high-level accuracy similar to the target based method.
+**thermal_range_calib** is a robust, high-accuracy extrinsic calibration tool between thermal camera LiDAR (e.g. Livox) and RGBD-camera in targetless environment. If the scene is suitable, we can achieve high-level accuracy similar to the target-based method.
 
+The system architecture is shown in the following diagram:
+
+![6971701232187_ pic](https://github.com/allenthreee/thermal_range_calib/assets/59171742/9f0a9377-5a5e-40fb-ac9f-1d327cab06e3)
 
 ## Related paper
 Related paper is coming soon...
