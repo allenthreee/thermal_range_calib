@@ -74,6 +74,9 @@ Following are some fusion examples:
 Record thermal image files to png format and the point cloud to pcd files(you can record it from the simulation or hardware).
 ### 4.2 Modify the **calib.yaml**
 Change the data path to your local data path.  
-Provide the instrinsic matrix and distor coeffs for your thermal camera.
+Provide the instrinsic matrix and distor coeffs for your thermal camera. 
+
+## 5. Acknowledgements
+Thanks for Livox_Camera_calib(C. Yuan et al. ixel-level extrinsic self calibration of high resolution lidar and camera in targetless environments).
 
 
