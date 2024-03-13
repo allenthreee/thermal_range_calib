@@ -77,6 +77,6 @@ Change the data path to your local data path.
 Provide the instrinsic matrix and distor coeffs for your thermal camera. 
 
 ## 5. Acknowledgements
-Thanks for [Livox_Camera_calib](https://github.com/hku-mars/livox_camera_calib)(C. Yuan et al. ixel-level extrinsic self calibration of high resolution lidar and camera in targetless environments).
+Thanks for [Livox_Camera_calib](https://github.com/hku-mars/livox_camera_calib)(C. Yuan et al. Pixel-level extrinsic self calibration of high resolution lidar and camera in targetless environments).
 
 
