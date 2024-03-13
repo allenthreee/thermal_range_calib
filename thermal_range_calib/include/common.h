@@ -6,6 +6,9 @@
 #include <stdio.h>
 #include <string>
 #include <unordered_map>
+struct PnPData {
+  double x, y, z, u, v;
+};
 
 struct pnl_data {
   double x, y, z, u, v;
@@ -228,11 +231,11 @@ typedef struct VoxelGrid {
 
 typedef struct Voxel {
   float size;
-  Eigen::Vector3d voxel_origin_coor;
+  Eigen::Vector3d voxel_origin;
   Eigen::Vector3d voxel_color;
   pcl::PointCloud<pcl::PointXYZI>::Ptr cloud;
   Voxel(float _size) : size(_size) {
-    voxel_origin_coor << 0, 0, 0;
+    voxel_origin << 0, 0, 0;
     cloud = pcl::PointCloud<pcl::PointXYZI>::Ptr(
         new pcl::PointCloud<pcl::PointXYZI>);
   };

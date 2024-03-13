@@ -47,30 +47,8 @@ target_link_libraries(canny_test
   ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
 )
 
-add_executable(laplace_test src/laplace_test.cpp)
-target_link_libraries(laplace_test 
-  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
-)
-
-add_executable(laplace_test_non_max src/laplace_test_non_max.cpp)
-target_link_libraries(laplace_test_non_max 
-  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
-)
-
-add_executable(counter_test src/counter_test.cpp)
-target_link_libraries(counter_test 
-  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
-)
-
-
-
-add_executable(thermal_range_calib_ooad src/thermal_range_calib_ooad.cpp include/thermal_range_calib.hpp)
-target_link_libraries(thermal_range_calib_ooad 
-  ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
-)
-
-add_executable(thermal_range_calib_ooad_multi src/thermal_range_calib_ooad_multi.cpp include/thermal_range_calib.hpp)
-target_link_libraries(thermal_range_calib_ooad_multi 
+add_executable(thermal_range_calib src/thermal_range_calib.cpp include/thermal_range_calib.hpp)
+target_link_libraries(thermal_range_calib 
   ${catkin_LIBRARIES} ${OpenCV_LIBS} ${PCL_LIBRARIES} ${CERES_LIBRARIES}
 )
 

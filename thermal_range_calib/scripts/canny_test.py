@@ -6,29 +6,40 @@ image = cv2.imread("/home/allen/calib_ws/data_demo/0thermal.png")
 # cv2.waitKey(0)
 print("load image")
 
-# Grayscale
-gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+# Callback function for trackbar changes
+def update_params(x):
+    # Get the current trackbar values
+    threshold1 = cv2.getTrackbarPos('Threshold 1', 'Canny')
+    threshold2 = cv2.getTrackbarPos('Threshold 2', 'Canny')
 
-# Find Canny edges
-canny_threshold = 5
-edged = cv2.Canny(gray, canny_threshold, canny_threshold*3, 3)
+    # Apply Canny edge detection
+    edges = cv2.Canny(image, threshold1, threshold2)
+
+    # Display the result
+    cv2.imshow('Canny', edges)
+
+# Load an image
+# image = cv2.imread('image.jpg', 0)  # Read the image in grayscale
+
+# Create a named window
+cv2.namedWindow('Canny')
+
+# Create trackbars
+cv2.createTrackbar('Threshold 1', 'Canny', 0, 255, update_params)
+cv2.createTrackbar('Threshold 2', 'Canny', 0, 255, update_params)
+
+# Initialize trackbar positions
+cv2.setTrackbarPos('Threshold 1', 'Canny', 50)
+cv2.setTrackbarPos('Threshold 2', 'Canny', 150)
+
+# Initialize Canny edge detection with default parameters
+edges = cv2.Canny(image, 50, 150)
+
+# Display the initial result
+cv2.imshow('Canny', edges)
+
+# Wait for key press
 cv2.waitKey(0)
 
-# Finding Contours
-# Use a copy of the image e.g. edged.copy()
-# since findContours alters the image
-contours, hierarchy = cv2.findContours(edged,
-	cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
-
-cv2.imshow('Canny Edges After Contouring', edged)
-cv2.waitKey(0)
-
-print("Number of Contours found = " + str(len(contours)))
-
-# Draw all contours
-# -1 signifies drawing all contours
-cv2.drawContours(image, contours, -1, (0, 255, 0), 3)
-
-cv2.imshow('Contours', image)
-cv2.waitKey(0)
+# Destroy all windows
 cv2.destroyAllWindows()

@@ -9,8 +9,9 @@ Panels:
         - /Axes1
         - /PointCloud21
         - /PointCloud22
-        - /Image1
+        - /PointCloud22/Status1
         - /PointCloud23
+        - /Image1
         - /PointCloud24
       Splitter Ratio: 0.5
     Tree Height: 532
@@ -31,7 +32,7 @@ Panels:
   - Class: rviz/Time
     Name: Time
     SyncMode: 0
-    SyncSource: PointCloud2
+    SyncSource: ""
 Preferences:
   PromptSaveOnExit: true
 Toolbars:
@@ -65,6 +66,34 @@ Visualization Manager:
       Radius: 0.30000001192092896
       Reference Frame: <Fixed Frame>
       Show Trail: false
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 11.993000030517578
+        Min Value: -31.85700035095215
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz/PointCloud2
+      Color: 255; 255; 255
+      Color Transformer: RGB8
+      Decay Time: 10000
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Min Color: 0; 0; 0
+      Name: PointCloud2
+      Position Transformer: XYZ
+      Queue Size: 10
+      Selectable: true
+      Size (Pixels): 1
+      Size (m): 0.004999999888241291
+      Style: Flat Squares
+      Topic: /rgb_cloud
+      Unreliable: false
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
     - Alpha: 0.5
       Autocompute Intensity Bounds: true
@@ -162,34 +191,6 @@ Visualization Manager:
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
-    - Alpha: 0.5
-      Autocompute Intensity Bounds: true
-      Autocompute Value Bounds:
-        Max Value: 2.9764456748962402
-        Min Value: -3.6170592308044434
-        Value: true
-      Axis: Z
-      Channel Name: intensity
-      Class: rviz/PointCloud2
-      Color: 255; 255; 255
-      Color Transformer: AxisColor
-      Decay Time: 0
-      Enabled: true
-      Invert Rainbow: false
-      Max Color: 255; 255; 255
-      Min Color: 0; 0; 0
-      Name: PointCloud2
-      Position Transformer: XYZ
-      Queue Size: 10
-      Selectable: true
-      Size (Pixels): 3
-      Size (m): 0.009999999776482582
-      Style: Boxes
-      Topic: /ywy_raw_cloud
-      Unreliable: true
-      Use Fixed Frame: true
-      Use rainbow: true
-      Value: true
   Enabled: true
   Global Options:
     Background Color: 0; 0; 0
@@ -218,7 +219,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.333524703979492
+      Distance: 137.16632080078125
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -226,17 +227,17 @@ Visualization Manager:
         Value: false
       Field of View: 0.7853981852531433
       Focal Point:
-        X: 4.772522926330566
-        Y: -0.07271140813827515
-        Z: -1.2727162837982178
+        X: 7.2602434158325195
+        Y: -1.372226357460022
+        Z: -1.1515934467315674
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.5452023148536682
+      Pitch: 0.6302030086517334
       Target Frame: <Fixed Frame>
-      Yaw: 2.695363759994507
+      Yaw: 3.415372610092163
     Saved:
       - Class: rviz/Orbit
         Distance: 10.496252059936523
@@ -316,5 +317,5 @@ Window Geometry:
   Views:
     collapsed: true
   Width: 960
-  X: 960
-  Y: 1107
+  X: 0
+  Y: 0
