@@ -32,7 +32,7 @@ def intersection_line(plane1, plane2):
 
     # Solve the system of equations to find a point on the intersection line
     point = np.linalg.solve(matrix, rhs)
-    print(f"the point is {point}")
+    # print(f"the point is {point}")
 
     # Return the direction vector and a point on the line
     return direction, point
@@ -111,7 +111,7 @@ def visualize_plane(plane, plane_id):
     axis = np.cross(up, normal)
     angle = np.arccos(np.dot(up, normal) / (np.linalg.norm(up) * np.linalg.norm(normal)))
     quat = tf.transformations.quaternion_about_axis(angle, axis)
-    print(f"quat is {quat}")
+    # print(f"quat is {quat}")
 
     # Set the orientation of the marker
     marker.pose.orientation.x = quat[0]
@@ -135,8 +135,8 @@ if __name__ == '__main__':
 
 
     # Define two planes. Each plane is represented by a point and a normal vector.
-    plane1 = (np.array([1, 1, 0]), np.array([1, 0, 0]))  # Plane parallel to YZ plane
-    plane2 = (np.array([0, 1, 1]), np.array([0, 0, 1]))  # Plane parallel to XY plane
+    plane1 = (np.array([0, 1, 0]), np.array([1, 0, 1]))  # Plane parallel to YZ plane
+    plane2 = (np.array([0, 1, 0]), np.array([0, 1, 1]))  # Plane parallel to XY plane
 
     # Calculate the intersection line of the two planes
     line = intersection_line(plane1, plane2)

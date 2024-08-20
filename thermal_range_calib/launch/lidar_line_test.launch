@@ -1,0 +1,15 @@
+<launch>
+  <rosparam command="load" file="$(find thermal_range_calib)/config/thermal_calib.yaml" />
+  <node 
+    pkg="thermal_range_calib"
+    type="lidar_line_test"
+    name="lidar_line_test"
+    output="screen"
+  />
+  <node 
+    pkg="rviz"
+    type="rviz"
+    name="rviz"
+    args="-d $(find thermal_range_calib)/rviz_cfg/calib.rviz"
+  />
+</launch>

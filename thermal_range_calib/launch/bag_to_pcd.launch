@@ -5,8 +5,9 @@
     name="bag_to_pcd"
     output="screen"
   />
-   <param name="bag_file" type="string" value="/home/ywy/data/calib/outdoor1.bag"/>
-   <param name="lidar_topic" type="string" value="/livox/lidar"/>
-   <param name="pcd_file" type="string" value="$(find thermal_range_calib)/result/0.pcd"/>
+   <param name="bag_file" type="string" value="/home/allen/calib_data/ign_simulation/ldiar80.5_thermal810.5/lidar_points.bag"/>
+   <!-- <param name="lidar_topic" type="string" value="/livox/lidar"/> -->
+   <param name="lidar_topic" type="string" value="/lidar/points"/>
+   <param name="pcd_file" type="string" value="/home/allen/calib_data/ign_simulation/ldiar80.5_thermal810.5/pcd/1.pcd"/>
    <param name="is_custom_msg" type="bool" value="false"/>
 </launch>

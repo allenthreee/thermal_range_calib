@@ -92,7 +92,8 @@ void ywy_initVoxel(
   std::cout << "ywy_neg_coor_cnt is: " << ywy_neg_coor_cnt << std::endl;
 
   for (auto iter = voxel_map.begin(); iter != voxel_map.end(); iter++) {
-    if (iter->second->cloud->size() > 20) {
+    // std::cout << "ywy this voxel has: " << iter->second->cloud->size() << "points" << std::endl; 
+    if (iter->second->cloud->size() > 5) {
       down_sampling_voxel(*(iter->second->cloud), 0.02);
     }
     // loop.sleep();
@@ -195,6 +196,7 @@ std::vector<Plane> planeFittingInVoxel(const float ransac_dis_thre, const int pl
     // std::cout << "YWY plane published, the size is " << color_planner_cloud.size() << std::endl;
     pub_loop.sleep();
   }
+  // std::cout << "YWY Plane number: " << plane_list.size() << std::endl;
   return plane_list;
 }
 

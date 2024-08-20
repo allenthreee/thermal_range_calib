@@ -59,6 +59,7 @@ void fillEdgeImg(std::vector<std::vector<cv::Point>> contours,
         p.x = contours[i][j].x;
         p.y = -contours[i][j].y;
         p.z = 0;
+        // ywy comment, y=row, x=col, in matrix and image, xy order different
         edge_img.at<uchar>(-p.y, p.x) = 255;
       }
     }
@@ -119,8 +120,16 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr thermalEdgeDetector(
   // }
 
   pcl::PointCloud<pcl::PointXYZ>::Ptr edge_cloud =
-    pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr(new pcl::PointCloud<pcl::PointXYZ>);
   fillEdgeCloud(edge_cloud, edge_img);
+
+  edge_cloud->width = edge_cloud->points.size();
+  edge_cloud->height = 1;
+  cv::imshow("canny result", canny_result);
+  cv::imshow("edge result", edge_img);
+  cv::waitKey();
+
+  
   return edge_cloud;
   // for (int x = 0; x < edge_img.cols; x++) {
   //   for (int y = 0; y < edge_img.rows; y++) {
@@ -133,12 +142,6 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr thermalEdgeDetector(
   //     }
   //   }
   // }
-
-  // edge_cloud->width = edge_cloud->points.size();
-  // edge_cloud->height = 1;
-  // cv::imshow("canny result", canny_result);
-  // cv::imshow("edge result", edge_img);
-  // cv::waitKey();
 }
 
 
