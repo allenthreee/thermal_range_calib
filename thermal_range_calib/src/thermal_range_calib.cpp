@@ -160,17 +160,17 @@ int main(int argc, char **argv) {
   calibra.init_rgb_cloud_pub_.publish(pub_cloud);
 
 
-  // cv::Mat init_img = calibra.getProjectionImg(calib_params);
-  // cv::Mat small_init_img = cv::Mat::zeros(cv::Size(1280,720), CV_64FC1);
-  // cv::resize(init_img, small_init_img, small_init_img.size(), 0, 0, cv::INTER_LINEAR);
-  // cv::imshow("Initial extrinsic", small_init_img);
+  cv::Mat init_img = calibra.getProjectionImg(calib_params);
+  cv::Mat small_init_img = cv::Mat::zeros(cv::Size(1280,720), CV_64FC1);
+  cv::resize(init_img, small_init_img, small_init_img.size(), 0, 0, cv::INTER_LINEAR);
+  cv::imshow("Initial extrinsic", init_img);
   // cv::imwrite("/home/allen/calib_ws/data_demo/results/init.png", init_img);
   // cv::waitKey(1000);
 
-  // cv::Mat test_img = calibra.getProjectionImg(calib_params);
-  // cv::Mat small_test_img = cv::Mat::zeros(cv::Size(1280,720), CV_64FC1);
-  // cv::resize(test_img, small_test_img, small_test_img.size(), 0, 0, cv::INTER_LINEAR);
-  // cv::imshow("After rough extrinsic", small_test_img);
+  cv::Mat test_img = calibra.getProjectionImg(calib_params);
+  cv::Mat small_test_img = cv::Mat::zeros(cv::Size(1280,720), CV_64FC1);
+  cv::resize(test_img, small_test_img, small_test_img.size(), 0, 0, cv::INTER_LINEAR);
+  cv::imshow("After rough extrinsic", test_img);
   // cv::waitKey(10000);
 
 
@@ -184,6 +184,8 @@ int main(int argc, char **argv) {
   // Iteratively reducve the matching distance threshold
   for (dis_threshold = 30; dis_threshold > 10; dis_threshold -= 1) {
     // For each distance, do twice optimization
+
+    // ywy1, lidar line cloud manually->calibra.plane_line_cloud_
     for (int cnt = 0; cnt < 2; cnt++) {
       calibra.buildVPnp(calib_params, dis_threshold, true,
                         calibra.rgb_edge_cloud_, calibra.plane_line_cloud_,
@@ -195,7 +197,7 @@ int main(int argc, char **argv) {
       cv::Mat projection_img = calibra.getProjectionImg(calib_params);
       cv::Mat small_projection_img = cv::Mat::zeros(cv::Size(1280,720), CV_64FC1);
       cv::resize(projection_img, small_projection_img, small_projection_img.size(), 0, 0, cv::INTER_LINEAR);
-      cv::imshow("Optimization", small_projection_img);
+      cv::imshow("Optimization", projection_img);
       cv::waitKey(100);
       Eigen::Vector3d euler_angle(calib_params[0], calib_params[1],
                                   calib_params[2]);

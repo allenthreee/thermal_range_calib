@@ -51,7 +51,9 @@ int main(int argc, char **argv) {
         p.y = livox_cloud_msg.points[i].y;
         p.z = livox_cloud_msg.points[i].z;
         p.intensity = livox_cloud_msg.points[i].reflectivity;
-        output_cloud.points.push_back(p);
+        if (p.x > -100 && p.x < 100 && p.y > -100 && p.y < 100 && p.z > -100 && p.z < 100) {
+          output_cloud.points.push_back(p);
+        }
       }
     } else {
       sensor_msgs::PointCloud2 livox_cloud;
@@ -61,7 +63,10 @@ int main(int argc, char **argv) {
       pcl_conversions::toPCL(livox_cloud, pcl_pc);
       pcl::fromPCLPointCloud2(pcl_pc, cloud);
       for (uint i = 0; i < cloud.size(); ++i) {
-        output_cloud.points.push_back(cloud.points[i]);
+        pcl::PointXYZI p = cloud.points[i];
+        if (p.x > -100 && p.x < 100 && p.y > -100 && p.y < 100 && p.z > -100 && p.z < 100) {
+          output_cloud.points.push_back(p);
+        }
       }
     }
   }
@@ -69,7 +74,7 @@ int main(int argc, char **argv) {
   output_cloud.width = output_cloud.points.size();
   output_cloud.height = 1;
   pcl::io::savePCDFileASCII(pcd_file, output_cloud);
-  string msg = "Sucessfully save point cloud to pcd file: " + pcd_file;
+  string msg = "Successfully saved point cloud to pcd file: " + pcd_file;
   ROS_INFO_STREAM(msg.c_str());
   return 0;
 }
