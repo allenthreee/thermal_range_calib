@@ -208,8 +208,8 @@ Calibration::Calibration(const std::string &image_file,
 
 
   std::cout << "before thermalEdgeDetector() called" << std::endl;
-  // @YWY NOTE: use this or 
-  // edgeDetector(rgb_canny_threshold_, rgb_edge_minLen_, grey_image_, edge_image, rgb_edge_cloud_);
+  // @YWY NOTE: (auto feature detection)use this or 
+  edgeDetector(rgb_canny_threshold_, rgb_edge_minLen_, grey_image_, edge_image, rgb_edge_cloud_);
   rgb_edge_cloud_ = thermalEdgeDetector(rgb_canny_threshold_, rgb_edge_minLen_, grey_image_);
 
 
@@ -221,7 +221,7 @@ Calibration::Calibration(const std::string &image_file,
   rgb_edge_cloud_->points.clear();
 
 
-  // for CMU pillar
+  // manual for CMU pillar
   // pcl::PointXYZI rgb_line_point_start_1, rgb_line_point_end_1;
   // rgb_line_point_start_1.x = 395; rgb_line_point_start_1.y = 145; rgb_line_point_start_1.z =0; rgb_line_point_start_1.intensity = 1.0;
   // rgb_line_point_end_1.x = 399; rgb_line_point_end_1.y = 301; rgb_line_point_end_1.z = 0; rgb_line_point_end_1.intensity = 2.0;
@@ -302,35 +302,35 @@ Calibration::Calibration(const std::string &image_file,
 
 
   // for ignition simulation, 640x480
-  pcl::PointXYZI rgb_line_point_start_1, rgb_line_point_end_1;
-  rgb_line_point_start_1.x = 114; rgb_line_point_start_1.y = 289; rgb_line_point_start_1.z =0; rgb_line_point_start_1.intensity = 1.0;
-  rgb_line_point_end_1.x = 181; rgb_line_point_end_1.y = 273; rgb_line_point_end_1.z = 0; rgb_line_point_end_1.intensity = 2.0;
-  int rgb_line_num_points = 100;
-  generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_1, rgb_line_point_end_1, rgb_line_num_points);
+  // pcl::PointXYZI rgb_line_point_start_1, rgb_line_point_end_1;
+  // rgb_line_point_start_1.x = 114; rgb_line_point_start_1.y = 289; rgb_line_point_start_1.z =0; rgb_line_point_start_1.intensity = 1.0;
+  // rgb_line_point_end_1.x = 181; rgb_line_point_end_1.y = 273; rgb_line_point_end_1.z = 0; rgb_line_point_end_1.intensity = 2.0;
+  // int rgb_line_num_points = 100;
+  // generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_1, rgb_line_point_end_1, rgb_line_num_points);
 
-  pcl::PointXYZI rgb_line_point_start_2, rgb_line_point_end_2;
-  rgb_line_point_start_2.x = 187; rgb_line_point_start_2.y = 129; rgb_line_point_start_2.z = 0; rgb_line_point_start_2.intensity = 1.0;
-  rgb_line_point_end_2.x = 187; rgb_line_point_end_2.y = 240; rgb_line_point_end_2.z = 0; rgb_line_point_end_2.intensity = 2.0;
-  // int rgb_line_num_points = 30;
-  generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_2, rgb_line_point_end_2, rgb_line_num_points);
+  // pcl::PointXYZI rgb_line_point_start_2, rgb_line_point_end_2;
+  // rgb_line_point_start_2.x = 187; rgb_line_point_start_2.y = 129; rgb_line_point_start_2.z = 0; rgb_line_point_start_2.intensity = 1.0;
+  // rgb_line_point_end_2.x = 187; rgb_line_point_end_2.y = 240; rgb_line_point_end_2.z = 0; rgb_line_point_end_2.intensity = 2.0;
+  // // int rgb_line_num_points = 30;
+  // generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_2, rgb_line_point_end_2, rgb_line_num_points);
 
-  pcl::PointXYZI rgb_line_point_start_3, rgb_line_point_end_3;
-  rgb_line_point_start_3.x = 220; rgb_line_point_start_3.y = 272; rgb_line_point_start_3.z = 0; rgb_line_point_start_3.intensity = 1.0;
-  rgb_line_point_end_3.x = 460; rgb_line_point_end_3.y = 272; rgb_line_point_end_3.z = 0; rgb_line_point_end_3.intensity = 2.0;
-  // int rgb_line_num_points = 30;
-  generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_3, rgb_line_point_end_3, rgb_line_num_points);
+  // pcl::PointXYZI rgb_line_point_start_3, rgb_line_point_end_3;
+  // rgb_line_point_start_3.x = 220; rgb_line_point_start_3.y = 272; rgb_line_point_start_3.z = 0; rgb_line_point_start_3.intensity = 1.0;
+  // rgb_line_point_end_3.x = 460; rgb_line_point_end_3.y = 272; rgb_line_point_end_3.z = 0; rgb_line_point_end_3.intensity = 2.0;
+  // // int rgb_line_num_points = 30;
+  // generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_3, rgb_line_point_end_3, rgb_line_num_points);
 
-  pcl::PointXYZI rgb_line_point_start_4, rgb_line_point_end_4;
-  rgb_line_point_start_4.x = 505; rgb_line_point_start_4.y = 132; rgb_line_point_start_4.z = 0; rgb_line_point_start_4.intensity = 1.0;
-  rgb_line_point_end_4.x = 505; rgb_line_point_end_4.y = 240; rgb_line_point_end_4.z = 0; rgb_line_point_end_4.intensity = 2.0;
-  // int rgb_line_num_points = 30;
-  generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_4, rgb_line_point_end_4, rgb_line_num_points);
+  // pcl::PointXYZI rgb_line_point_start_4, rgb_line_point_end_4;
+  // rgb_line_point_start_4.x = 505; rgb_line_point_start_4.y = 132; rgb_line_point_start_4.z = 0; rgb_line_point_start_4.intensity = 1.0;
+  // rgb_line_point_end_4.x = 505; rgb_line_point_end_4.y = 240; rgb_line_point_end_4.z = 0; rgb_line_point_end_4.intensity = 2.0;
+  // // int rgb_line_num_points = 30;
+  // generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_4, rgb_line_point_end_4, rgb_line_num_points);
 
-  pcl::PointXYZI rgb_line_point_start_5, rgb_line_point_end_5;
-  rgb_line_point_start_5.x = 530; rgb_line_point_start_5.y = 273; rgb_line_point_start_5.z = 0; rgb_line_point_start_5.intensity = 1.0;
-  rgb_line_point_end_5.x = 632; rgb_line_point_end_5.y = 277; rgb_line_point_end_5.z = 0; rgb_line_point_end_5.intensity = 2.0;
-  // int rgb_line_num_points = 30;
-  generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_5, rgb_line_point_end_5, rgb_line_num_points);
+  // pcl::PointXYZI rgb_line_point_start_5, rgb_line_point_end_5;
+  // rgb_line_point_start_5.x = 530; rgb_line_point_start_5.y = 273; rgb_line_point_start_5.z = 0; rgb_line_point_start_5.intensity = 1.0;
+  // rgb_line_point_end_5.x = 632; rgb_line_point_end_5.y = 277; rgb_line_point_end_5.z = 0; rgb_line_point_end_5.intensity = 2.0;
+  // // int rgb_line_num_points = 30;
+  // generateRGBLinePoints(rgb_edge_cloud_, rgb_line_point_start_5, rgb_line_point_end_5, rgb_line_num_points);
 
 
   std::string msg = "Sucessfully extract edge from image, edge size:" +
@@ -382,7 +382,7 @@ Calibration::Calibration(const std::string &image_file,
   // ywy8.16 todo2, replace this by manually select line. calibra.plane_line_cloud_
   // plane_line_cloud_->points.push_back(this_point)
 
-  // @YWY NOTE: use this or 
+  // @YWY NOTE: (auto)use this or 
   LiDAREdgeExtraction(voxel_map, ransac_dis_threshold_, min_point_num_in_one_plane_,
                       plane_line_cloud_);
 
@@ -391,8 +391,8 @@ Calibration::Calibration(const std::string &image_file,
         std::cout << "x: " << point.x << ", y: " << point.y << ", z: " << point.z << std::endl;
   }
           
-  plane_line_cloud_->points.clear();
-  // @YWY NOTE: or use this 
+  // plane_line_cloud_->points.clear();
+  // @YWY NOTE: or use this (manual)
   // CMU pillar
   // pcl::PointXYZI line_point_start_1, line_point_end_1;
   // line_point_start_1.x = 4.59; line_point_start_1.y = -0.45; line_point_start_1.z = -0.290; line_point_start_1.intensity = 1.0;
@@ -438,35 +438,35 @@ Calibration::Calibration(const std::string &image_file,
 
 
   // ignition simulation
-  pcl::PointXYZI line_point_start_1, line_point_end_1;
-  line_point_start_1.x = 6.45; line_point_start_1.y = 2.85; line_point_start_1.z = -0.530; line_point_start_1.intensity = 1.0;
-  line_point_end_1.x = 9.47; line_point_end_1.y = 2.86; line_point_end_1.z = -0.53; line_point_end_1.intensity = 2.0;
-  int line1_num_points = 30;
-  generateLinePoints(plane_line_cloud_, line_point_start_1, line_point_end_1, line1_num_points);
-
-  pcl::PointXYZI line_point_start_2, line_point_end_2;
-  line_point_start_2.x = 9.84; line_point_start_2.y = 2.87; line_point_start_2.z = 1.77; line_point_start_2.intensity = 1.0;
-  line_point_end_2.x = 9.84; line_point_end_2.y = 2.87; line_point_end_2.z = 0.33; line_point_end_2.intensity = 2.0;
+  // pcl::PointXYZI line_point_start_1, line_point_end_1;
+  // line_point_start_1.x = 6.45; line_point_start_1.y = 2.85; line_point_start_1.z = -0.530; line_point_start_1.intensity = 1.0;
+  // line_point_end_1.x = 9.47; line_point_end_1.y = 2.86; line_point_end_1.z = -0.53; line_point_end_1.intensity = 2.0;
   // int line1_num_points = 30;
-  generateLinePoints(plane_line_cloud_, line_point_start_2, line_point_end_2, line1_num_points);
+  // generateLinePoints(plane_line_cloud_, line_point_start_1, line_point_end_1, line1_num_points);
 
-  pcl::PointXYZI line_point_start_3, line_point_end_3;
-  line_point_start_3.x = 9.84; line_point_start_3.y = 2.87; line_point_start_3.z = -0.53; line_point_start_3.intensity = 1.0;
-  line_point_end_3.x = 9.84; line_point_end_3.y = -2.5; line_point_end_3.z = -0.53; line_point_end_3.intensity = 2.0;
-  // int line1_num_points = 30;
-  generateLinePoints(plane_line_cloud_, line_point_start_3, line_point_end_3, line1_num_points);
+  // pcl::PointXYZI line_point_start_2, line_point_end_2;
+  // line_point_start_2.x = 9.84; line_point_start_2.y = 2.87; line_point_start_2.z = 1.77; line_point_start_2.intensity = 1.0;
+  // line_point_end_2.x = 9.84; line_point_end_2.y = 2.87; line_point_end_2.z = 0.33; line_point_end_2.intensity = 2.0;
+  // // int line1_num_points = 30;
+  // generateLinePoints(plane_line_cloud_, line_point_start_2, line_point_end_2, line1_num_points);
 
-  pcl::PointXYZI line_point_start_4, line_point_end_4;
-  line_point_start_4.x = 9.85; line_point_start_4.y = -2.78; line_point_start_4.z = 1.92; line_point_start_4.intensity = 1.0;
-  line_point_end_4.x = 9.85; line_point_end_4.y = -2.78; line_point_end_4.z = -0.5; line_point_end_4.intensity = 2.0;
-  // int line1_num_points = 30;
-  generateLinePoints(plane_line_cloud_, line_point_start_4, line_point_end_4, line1_num_points);
+  // pcl::PointXYZI line_point_start_3, line_point_end_3;
+  // line_point_start_3.x = 9.84; line_point_start_3.y = 2.87; line_point_start_3.z = -0.53; line_point_start_3.intensity = 1.0;
+  // line_point_end_3.x = 9.84; line_point_end_3.y = -2.5; line_point_end_3.z = -0.53; line_point_end_3.intensity = 2.0;
+  // // int line1_num_points = 30;
+  // generateLinePoints(plane_line_cloud_, line_point_start_3, line_point_end_3, line1_num_points);
 
-  pcl::PointXYZI line_point_start_5, line_point_end_5;
-  line_point_start_5.x = 8.96; line_point_start_5.y = -3.40; line_point_start_5.z = -0.55; line_point_start_5.intensity = 1.0;
-  line_point_end_5.x = 7.17; line_point_end_5.y = -4.63; line_point_end_5.z = -0.55; line_point_end_5.intensity = 2.0;
-  // int line1_num_points = 30;
-  generateLinePoints(plane_line_cloud_, line_point_start_5, line_point_end_5, line1_num_points);
+  // pcl::PointXYZI line_point_start_4, line_point_end_4;
+  // line_point_start_4.x = 9.85; line_point_start_4.y = -2.78; line_point_start_4.z = 1.92; line_point_start_4.intensity = 1.0;
+  // line_point_end_4.x = 9.85; line_point_end_4.y = -2.78; line_point_end_4.z = -0.5; line_point_end_4.intensity = 2.0;
+  // // int line1_num_points = 30;
+  // generateLinePoints(plane_line_cloud_, line_point_start_4, line_point_end_4, line1_num_points);
+
+  // pcl::PointXYZI line_point_start_5, line_point_end_5;
+  // line_point_start_5.x = 8.96; line_point_start_5.y = -3.40; line_point_start_5.z = -0.55; line_point_start_5.intensity = 1.0;
+  // line_point_end_5.x = 7.17; line_point_end_5.y = -4.63; line_point_end_5.z = -0.55; line_point_end_5.intensity = 2.0;
+  // // int line1_num_points = 30;
+  // generateLinePoints(plane_line_cloud_, line_point_start_5, line_point_end_5, line1_num_points);
 
 
 };
