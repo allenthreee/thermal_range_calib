@@ -13,6 +13,7 @@ The system architecture is shown in the following diagram:
 
 ## Related paper
 Related paper is coming soon...
+It's been accepted, finally! Three f**king years :)
 
 
 ## 1. Prerequisites
